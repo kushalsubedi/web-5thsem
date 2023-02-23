@@ -2,9 +2,7 @@
 <!DOCTYPE aliens SYSTEM "schema.xsd">
 
 <aliens>
-
     <name>Alien 1</name>
     <age>10</age>
     <planet>Earth</planet>
-
 </aliens>
