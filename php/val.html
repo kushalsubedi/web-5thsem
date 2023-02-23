@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="registration" onsubmit="return validateForm()">
+        <div class="form" id="nam">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <span class="Error"><b>
+
+                </b></span>
+        </div>
+
+        <div class="form" id="em">
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="email">
+            <b><span class="Error">
+
+                </span></b>
+        </div>
+
+        <div class="form" id="pass">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <b></b> <span class="Error">
+
+            </span></b>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script>
+
+        function seterror(id, error) {
+            //sets error inside span tag
+            element = document.getElementById(id);
+            element.getElementsByClassName("Error")[0].innerHTML = error;
+        }
+
+        function validateForm() {
+            var name = document.forms["registration"]["name"].value;
+            var email = document.forms["registration"]["email"].value;
+            var password = document.forms["registration"]["password"].value;
+
+            if (name == "") {
+                seterror("nam", "Please enter your name.");
+                return false;
+            }
+
+            if (email == "") {
+                seterror("em", "Please enter your valid email address.");
+                return false;
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                seterror("em", "Please enter a valid email address.")
+                return false;
+            }
+
+            if (password == "" || password.length < 4 ||
+                password[password.length - 1] != "*[A-z]]") {
+                seterror("pass", "Please enter a valid password.");
+                return false;
+
+            }
+
+
+            return true;
+        }
+//The updated function uses a regular expression to check that the password
+//contains at least one uppercase letter ((?=.*[A-Z])), one lowercase letter ((?=.*[a-z])), 
+//one symbol ((?=.*\W)), and one number ((?=.*\d)), and is at least 8 characters long (.{8,}). 
+//If any of these conditions are not met, an alert message is displayed and the function returns false.
+// If all conditions are met, the function returns true.
+
+    </script>
+</body>
+
+</html>

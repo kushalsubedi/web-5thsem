@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="student.xsl" type="text/xsl"?>
+<!DOCTYPE class SYSTEM "student.dtd">
+<class>
+    <student>
+        <name>John</name>
+        <age>10</age>
+        <grade>1</grade>
+    </student>
+    <student>
+        <name>Tom</name>
+        <age>11</age>
+        <grade>2</grade>
+    </student>
+    <student>
+        <name>Jack</name>
+        <age>12</age>
+        <grade>3</grade>
+        </student>  
+</class>

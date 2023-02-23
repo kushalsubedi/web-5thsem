@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT aliens (alien+)>
+<!ELEMENT alien (name,age,planet)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT planet (#PCDATA)>
+<!ATTLIST alien aid ID #REQUIRED>
+<!ATTLIST alien lang (python|c) "python">
